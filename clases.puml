@@ -43,7 +43,7 @@ class Libro {
 +{method} actualizarDisponibilidad(disponibilidadLibro: boolean): void
 }
 
-Socio "1..10" o----> "1..5" Libro : Solicita
+Socio "1..10" o---> "1..5" Libro : Arrienda
 
 
 
