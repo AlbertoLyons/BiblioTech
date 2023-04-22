@@ -1,0 +1,18 @@
+[
+  {
+    "nombre": "John",
+    "apellido": "Doe",
+    "correoElectronico": "john.doe@ucn.cl",
+    "numeroDeSocio": 1,
+    "contrasenia": "john123",
+    "librosEnPrestamo": []
+  },
+  {
+    "nombre": "Ruben",
+    "apellido": "Macaya",
+    "correoElectronico": "ruben.macaya@gmail.com",
+    "numeroDeSocio": 2,
+    "contrasenia": "ruben123",
+    "librosEnPrestamo": []
+  }
+]

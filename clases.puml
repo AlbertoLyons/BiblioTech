@@ -1,0 +1,50 @@
+@startuml
+left to right direction
+skin rose
+class Socio {
+-{field} nombre: String
+-{field} apellido: String
+-{field} correoElectronico: String
+-{field} numeroDeSocio: int
+-{field} contrasenia: String
++{method} Socio(nombre: String, apellido: String, correoElectronico: String,\n numeroDeSocio: String, contrasenia: String)
++{method} getNombre(): String
++{method} getApellido(): String
++{method} getCorreoElectronico(): String
++{method} getNumeroDeSocio(): int
++{method} getContrasenia(): String
++{method} agregarLibro(): void
++{method} setCorreoElectronico(correoElectronico: String) void
++{method} setContrasenia(contrasenia: String): void
+}
+class Libro {
+-{field} título: String
+-{field} autor: String
+-{field} categoria: String
+-{field} isbn: String
+-{field} cantCalificaciones: int
+-{field} estrellasTotales: int
+-{field} promedioCalificacion: double
+-{field} disponibilidadLibro: boolean
+
++{method} Libro(titulo: String, autor: String: categoria: String, isbn, String)
++{method} getTitulo(): String
++{method} getAutor(): String
++{method} getCategoria(): String
++{method} getIsbn(): String
++{method} getPromedioCalificacion(): double
++{method} getCantCalificaciones(): int
++{method} getEstrellasTotales(): int
++{method} setCantCalificaciones(cantCalificaciones: int): void
++{method} setEstrellasTotales(estrellasTotales: int): void
++{method} setPromedioCalificacion(promedioCalificacion: double): void
++{method} isDisponibilidadLibro(disponibilidadLibro: boolean): boolean
++{method} setDisponibilidadLibro(disponibilidadLibro: boolean) void
++{method} actualizarDisponibilidad(disponibilidadLibro: boolean): void
+}
+
+Socio "1..10" o----> "1..5" Libro : Solicita
+
+
+
+@enduml

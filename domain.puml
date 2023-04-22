@@ -1,0 +1,21 @@
+@startuml
+left to right direction
+skin rose
+
+entity Socio {
+Nombre
+Apellido
+Número de socio
+Lista de libros prestados
+Contraseña
+}
+entity Libro {
+Título
+Autor
+Categoria
+ISBNS
+}
+Socio "1..*"---"1..*" Libro : Arrienda
+note bottom on link : El socio debe de calificar\nel libro entre 0 a 5 estrellas
+
+@enduml

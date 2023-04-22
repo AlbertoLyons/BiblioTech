@@ -1,0 +1,32 @@
+[
+  {
+    "isbn": "1491910771",
+    "titulo": "Head First Java: A Brain-Friendly Guide",
+    "autor": "Kathy Sierra",
+    "categoria": "Programming Languages",
+    "cantCalificaciones": 0,
+    "estrellasTotales": 0,
+    "promedioCalificacion": 0.0,
+    "disponibilidadLibro": false
+  },
+  {
+    "isbn": "1491910772",
+    "titulo": "Effective Java",
+    "autor": "Joshua Bloch",
+    "categoria": "Programming Languages",
+    "cantCalificaciones": 0,
+    "estrellasTotales": 0,
+    "promedioCalificacion": 0.0,
+    "disponibilidadLibro": false
+  },
+  {
+    "isbn": "1234578900",
+    "titulo": "Esta dificil el taller",
+    "autor": "Ruben Macaya",
+    "categoria": "Programming Languages",
+    "cantCalificaciones": 0,
+    "estrellasTotales": 0,
+    "promedioCalificacion": 0.0,
+    "disponibilidadLibro": false
+  }
+]
