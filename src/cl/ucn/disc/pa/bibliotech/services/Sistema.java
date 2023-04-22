@@ -285,6 +285,7 @@ public final class Sistema {
      * @param correoNuevo
      */
     public void actualizarCorreo(String correoNuevo) {
+        Utils.validarEmail(correoNuevo);
         this.socio.setCorreoElectronico(correoNuevo);
     }
 
