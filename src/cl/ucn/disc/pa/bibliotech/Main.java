@@ -61,7 +61,7 @@ public final class Main {
      *
      * @param sistema a utilizar.
      */
-    private static void iniciarSesion(final Sistema sistema) {
+    private static void iniciarSesion(final Sistema sistema) throws IOException {
         //Variable y ciclo para validar que el numero sea valido.
         int numeroSocio;
 
@@ -97,7 +97,7 @@ public final class Main {
         menuPrincipal(sistema);
     }
 
-    private static void menuPrincipal(final Sistema sistema) {
+    private static void menuPrincipal(final Sistema sistema) throws IOException {
 
         String opcion = null;
         while (!Objects.equals(opcion, "4")) {
@@ -140,7 +140,7 @@ public final class Main {
     }
 
     // Metodo para editar la informacion del usuario.
-    private static void editarInformacion(Sistema sistema) {
+    private static void editarInformacion(Sistema sistema) throws IOException {
 
         String opcion = null;
         while (!Objects.equals(opcion, "3")) {
@@ -173,7 +173,11 @@ public final class Main {
         StdOut.println(sistema.obtenerCatalogoLibrosParaResenias());
 
         StdOut.print("Ingrese el ISBN del libro a calificar: ");
+
         String isbn = StdIn.readLine();
+        sistema.buscarLibroParaResenia(isbn);
+        isbn = sistema.obtenerCatalogoLibrosParaResenias();
+
 
         StdOut.print("Realice una breve reseña: ");
         String resenia = StdIn.readLine();
@@ -198,7 +202,7 @@ public final class Main {
     }
 
     // Metodo para actualizar contraseña.
-    private static void cambiarContrasenia(Sistema sistema) {
+    private static void cambiarContrasenia(Sistema sistema) throws IOException {
 
         StdOut.print("Ingrese la nueva contraseña: ");
         String contraseñaNueva = StdIn.readString();
@@ -208,7 +212,7 @@ public final class Main {
     }
 
     // Metodo para actualizar correo.
-    private static void editarCorreo(Sistema sistema) {
+    private static void editarCorreo(Sistema sistema) throws IOException {
 
         StdOut.print("Ingrese el nuevo correo electronico: ");
         String correoNuevo = StdIn.readString();

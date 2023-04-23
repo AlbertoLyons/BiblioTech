@@ -8,6 +8,7 @@ import cl.ucn.disc.pa.bibliotech.model.Libro;
 import cl.ucn.disc.pa.bibliotech.model.Socio;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import edu.princeton.cs.stdlib.StdIn;
 import edu.princeton.cs.stdlib.StdOut;
 
 import java.io.FileNotFoundException;
@@ -158,6 +159,28 @@ public final class Sistema {
         this.guardarInformacion();
     }
 
+    /**
+     * Busca el libro que el usuario ingreso y no retorna hasta que sea el correcto
+     *
+     * @param isbn
+     */
+    public String buscarLibroParaResenia(String isbn) {
+        while (true) {
+
+            // busco el libro.
+            Libro libro = this.buscarLibro(isbn);
+
+            // si no lo encontre, lo informo.
+            if (libro == null) {
+                StdOut.println("Libro con isbn " + isbn + " no existe o no se encuentra disponible.");
+                StdOut.print("Ingrese el ISBN del libro a calificar: ");
+                isbn = StdIn.readLine();
+            } else {
+                return isbn;
+            }
+        }
+    }
+
     public void disponibilidadInicio() {
         boolean disponible = true;
         for (Libro libro : this.libros) {
@@ -284,9 +307,12 @@ public final class Sistema {
      *
      * @param correoNuevo
      */
-    public void actualizarCorreo(String correoNuevo) {
+    public void actualizarCorreo(String correoNuevo) throws IOException {
         Utils.validarEmail(correoNuevo);
         this.socio.setCorreoElectronico(correoNuevo);
+
+        // Guardamos la informacion
+        this.guardarInformacion();
     }
 
     /**
@@ -294,8 +320,11 @@ public final class Sistema {
      *
      * @param contraseñaNueva
      */
-    public void actualizarContraseña(String contraseñaNueva) {
+    public void actualizarContraseña(String contraseñaNueva) throws IOException {
         this.socio.setContrasenia(contraseñaNueva);
+
+        // Guardamos la informacion
+        this.guardarInformacion();
     }
 
     /**

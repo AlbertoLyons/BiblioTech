@@ -7,7 +7,7 @@
     "cantCalificaciones": 0,
     "estrellasTotales": 0,
     "promedioCalificacion": 0.0,
-    "disponibilidadLibro": false
+    "disponibilidadLibro": true
   },
   {
     "isbn": "1491910772",
@@ -17,7 +17,7 @@
     "cantCalificaciones": 0,
     "estrellasTotales": 0,
     "promedioCalificacion": 0.0,
-    "disponibilidadLibro": false
+    "disponibilidadLibro": true
   },
   {
     "isbn": "1234578900",
@@ -27,6 +27,6 @@
     "cantCalificaciones": 0,
     "estrellasTotales": 0,
     "promedioCalificacion": 0.0,
-    "disponibilidadLibro": false
+    "disponibilidadLibro": true
   }
 ]
