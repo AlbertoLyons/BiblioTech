@@ -16,9 +16,6 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
-import ucn.StdIn;
-import ucn.StdOut;
-
 /**
  * The Sistema.
  *
@@ -337,7 +334,7 @@ public final class Sistema {
      * @param nombreNuevo
      * @throws IOException
      */
-    public void actualizarNombre(String nombreNuevo) throws IOException{
+    public void actualizarNombre(String nombreNuevo) throws IOException {
         this.socio.setNombre(nombreNuevo);
 
         // Guardamos la informacion.
@@ -350,7 +347,7 @@ public final class Sistema {
      * @param apellidoNuevo
      * @throws IOException
      */
-    public void actualizarApellido(String apellidoNuevo) throws IOException{
+    public void actualizarApellido(String apellidoNuevo) throws IOException {
         this.socio.setApellido(apellidoNuevo);
 
         // Guardamos la informacion.
