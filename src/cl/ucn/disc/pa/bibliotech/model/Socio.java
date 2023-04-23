@@ -98,10 +98,28 @@ public final class Socio {
     }
 
     /**
+     * Actualiza el valor nombre
+     *
+     * @param nombre
+     */
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    /**
      * @return el apellido del Socio.
      */
     public String getApellido() {
         return this.apellido;
+    }
+
+    /**
+     * Actualiza el valor apellido
+     *
+     * @param apellido
+     */
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
     }
 
     /**

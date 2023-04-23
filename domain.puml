@@ -15,7 +15,7 @@ Autor
 Categoria
 ISBNS
 }
-Socio "1..*"---"1..*" Libro : Arrienda
+Socio "1..*"---"1..*" Libro : Solicita
 note bottom on link : El socio debe de calificar\nel libro entre 0 a 5 estrellas
 
 @enduml

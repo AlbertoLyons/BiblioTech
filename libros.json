@@ -21,9 +21,9 @@
   },
   {
     "isbn": "1234578900",
-    "titulo": "Esta dificil el taller",
+    "titulo": "Libro de prueba",
     "autor": "Ruben Macaya",
-    "categoria": "Programming Languages",
+    "categoria": "Pruebas",
     "cantCalificaciones": 0,
     "estrellasTotales": 0,
     "promedioCalificacion": 0.0,

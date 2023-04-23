@@ -5,8 +5,8 @@
 package cl.ucn.disc.pa.bibliotech;
 
 import cl.ucn.disc.pa.bibliotech.services.Sistema;
-import edu.princeton.cs.stdlib.StdIn;
-import edu.princeton.cs.stdlib.StdOut;
+import ucn.StdIn;
+import ucn.StdOut;
 
 import java.io.IOException;
 import java.util.Objects;
@@ -140,6 +140,8 @@ public final class Main {
     }
 
     // Metodo para editar la informacion del usuario.
+
+    //Nota: el taller pide solamente editar correo, nombre y apellido, pero, el proyecto ya venia con un TO DO: Editar contraseña.
     private static void editarInformacion(Sistema sistema) throws IOException {
 
         String opcion = null;
@@ -150,8 +152,10 @@ public final class Main {
             StdOut.println("""               
                     [1] Editar correo Electronico
                     [2] Editar Contraseña
+                    [3] Editar Nombre
+                    [4] Editar Apellido
                                         
-                    [3] Volver atrás
+                    [5] Volver atrás
                     """);
             StdOut.print("Escoja una opción: ");
             opcion = StdIn.readLine();
@@ -159,13 +163,55 @@ public final class Main {
             switch (opcion) {
                 case "1" -> editarCorreo(sistema);
                 case "2" -> cambiarContrasenia(sistema);
-                case "3" -> StdOut.println("Volviendo al menú anterior...");
+                case "3" -> editarNombre(sistema);
+                case "4" -> editarApellido(sistema);
+                case "5" -> StdOut.println("Volviendo al menú anterior...");
                 default -> StdOut.println("Opcion no valida, intente nuevamente");
             }
         }
     }
 
     // Metodo para calificar y realizar reseña a un libro.
+
+
+    // Metodo para actualizar contraseña.
+    private static void cambiarContrasenia(Sistema sistema) throws IOException {
+
+        StdOut.print("Ingrese la nueva contraseña: ");
+        String contraseñaNueva = StdIn.readString();
+        sistema.actualizarContraseña(contraseñaNueva);
+        StdOut.println("Contrasenia actualizada con exito.");
+        StdOut.println("");
+    }
+
+    // Metodo para actualizar correo.
+    private static void editarCorreo(Sistema sistema) throws IOException {
+
+        StdOut.print("Ingrese el nuevo correo electronico: ");
+        String correoNuevo = StdIn.readString();
+        sistema.actualizarCorreo(correoNuevo);
+        StdOut.println("Correo actualizado con exito.");
+        StdOut.println("");
+    }
+
+    private static void editarNombre(Sistema sistema) throws IOException {
+
+        StdOut.println("Ingrese el nuevo nombre: ");
+        String nombreNuevo = StdIn.readLine();
+        sistema.actualizarNombre(nombreNuevo);
+        StdOut.println("Nombre actualizado con exito.");
+        StdOut.println("");
+    }
+
+    private static void editarApellido(Sistema sistema) throws IOException {
+
+        StdOut.println("Ingrese el nuevo apellido: ");
+        String apellidoNuevo = StdIn.readLine();
+        sistema.actualizarApellido(apellidoNuevo);
+        StdOut.println("Apellido actualizado con exito.");
+        StdOut.println("");
+    }
+
     private static void calificarLibro(Sistema sistema) {
 
         int calificacion = 0;
@@ -198,26 +244,6 @@ public final class Main {
         }
         sistema.calificacionesLibros(isbn, calificacion);
         StdOut.println("/// Libro calificado con exito. ///");
-        StdOut.println("");
-    }
-
-    // Metodo para actualizar contraseña.
-    private static void cambiarContrasenia(Sistema sistema) throws IOException {
-
-        StdOut.print("Ingrese la nueva contraseña: ");
-        String contraseñaNueva = StdIn.readString();
-        sistema.actualizarContraseña(contraseñaNueva);
-        StdOut.println("Contrasenia actualizada con exito.");
-        StdOut.println("");
-    }
-
-    // Metodo para actualizar correo.
-    private static void editarCorreo(Sistema sistema) throws IOException {
-
-        StdOut.print("Ingrese el nuevo correo electronico: ");
-        String correoNuevo = StdIn.readString();
-        sistema.actualizarCorreo(correoNuevo);
-        StdOut.println("Correo actualizado con exito.");
         StdOut.println("");
     }
 }

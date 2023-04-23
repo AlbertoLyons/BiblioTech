@@ -16,6 +16,9 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
+import ucn.StdIn;
+import ucn.StdOut;
+
 /**
  * The Sistema.
  *
@@ -27,7 +30,6 @@ public final class Sistema {
      * Procesador de JSON.
      */
     private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
-
     /**
      * The list of Socios.
      */
@@ -306,6 +308,7 @@ public final class Sistema {
      * Actualiza el correo.
      *
      * @param correoNuevo
+     * @throws IOException
      */
     public void actualizarCorreo(String correoNuevo) throws IOException {
         Utils.validarEmail(correoNuevo);
@@ -319,11 +322,38 @@ public final class Sistema {
      * Actualiza la contraseña.
      *
      * @param contraseñaNueva
+     * @throws IOException
      */
     public void actualizarContraseña(String contraseñaNueva) throws IOException {
         this.socio.setContrasenia(contraseñaNueva);
 
-        // Guardamos la informacion
+        // Guardamos la informacion.
+        this.guardarInformacion();
+    }
+
+    /**
+     * Actualiza el nombre.
+     *
+     * @param nombreNuevo
+     * @throws IOException
+     */
+    public void actualizarNombre(String nombreNuevo) throws IOException{
+        this.socio.setNombre(nombreNuevo);
+
+        // Guardamos la informacion.
+        this.guardarInformacion();
+    }
+
+    /**
+     * Actualiza el apellido.
+     *
+     * @param apellidoNuevo
+     * @throws IOException
+     */
+    public void actualizarApellido(String apellidoNuevo) throws IOException{
+        this.socio.setApellido(apellidoNuevo);
+
+        // Guardamos la informacion.
         this.guardarInformacion();
     }
 
